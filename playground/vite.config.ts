@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vite'
 
-import ogPlugin from 'vite-plugin-open-graph';
+import ogPlugin from 'vite-plugin-open-graph'
 
 export default defineConfig({
   plugins: [ogPlugin()],
-});
+})
