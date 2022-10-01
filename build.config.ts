@@ -1,4 +1,4 @@
-import { defineBuildConfig } from 'unbuild'
+import { defineBuildConfig } from 'unbuild';
 
 export default defineBuildConfig({
   entries: ['./src/index.ts'],
@@ -7,4 +7,5 @@ export default defineBuildConfig({
   rollup: {
     emitCJS: true,
   },
-})
+  externals: ['vite'],
+});
