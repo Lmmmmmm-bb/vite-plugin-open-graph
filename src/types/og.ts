@@ -1,11 +1,3 @@
-export enum DeterminerEnum {
-  A = 'a',
-  An = 'an',
-  The = 'the',
-  Auto = 'auto',
-  Empty = '',
-}
-
 export interface BasicOptions {
   /**
    * @description The title of your object as it should appear within the graph, e.g., "The Rock".
@@ -40,7 +32,7 @@ export interface ExtraOptions {
    * @default ""
    * @tip If auto is chosen, the consumer of your data should chose between "a" or "an".
    */
-  determiner?: DeterminerEnum
+  determiner?: 'a' | 'an' | 'the' | 'auto' | ''
   /**
    * @description The locale these tags are marked up in. Of the format `language_TERRITORY`.
    * @default en_US
@@ -92,12 +84,6 @@ export interface ImageOptions {
 export type VideoOptions = Omit<ImageOptions, 'alt'>
 
 export type AudioOptions = Pick<ImageOptions, 'url' | 'secureUrl' | 'type'>
-
-export enum GenderEnum {
-  Male = 'male',
-  Female = 'female',
-}
-
 /**
  * @see https://ogp.me/#no_vertical
  * @namespace https://ogp.me/ns/profile#
@@ -118,7 +104,7 @@ export interface ProfileOptions {
   /**
    * @description Their gender.
    */
-  gender?: GenderEnum
+  gender?: 'male' | 'female'
 }
 
 /**
