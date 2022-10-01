@@ -10,9 +10,7 @@
   },
   "devDependencies": {
     "typescript": "^4.6.4",
-    "vite": "^3.1.0"
-  },
-  "dependencies": {
+    "vite": "^3.1.0",
     "vite-plugin-open-graph": "workspace:*"
   }
 }
