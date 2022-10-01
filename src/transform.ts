@@ -6,7 +6,7 @@ import type { Options } from './types'
  * @param attrName name
  * @returns join by ':'
  */
-const camelcase = (attrName: string) => attrName.replace(/([A-Z])/g, ':$1').toLowerCase()
+export const camelcase = (attrName: string) => attrName.replace(/([A-Z])/g, ':$1').toLowerCase()
 
 export const transform = (options: Options): HtmlTagDescriptor[] => {
   const basicOGMetaAttrs = Object.entries(options.basic).map(([name, content]) => ({ name: camelcase(name), content }))
