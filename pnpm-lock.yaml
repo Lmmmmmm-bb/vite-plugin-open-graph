@@ -30,6 +30,9 @@ importers:
     specifiers:
       typescript: ^4.6.4
       vite: ^3.1.0
+      vite-plugin-open-graph: workspace:*
+    dependencies:
+      vite-plugin-open-graph: link:..
     devDependencies:
       typescript: 4.8.3
       vite: 3.1.2
