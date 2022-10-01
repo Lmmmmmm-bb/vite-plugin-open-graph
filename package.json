@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@7.12.2",
-  "description": "",
+  "description": "Generate open graph meta tags for your vite app.",
   "author": {
     "email": "lmmmmmm12138@gmail.com",
     "name": "_lmmmmmm",
@@ -16,7 +16,12 @@
     "url": "git+https://github.com/Lmmmmmm-bb/vite-plugin-open-graph.git"
   },
   "bugs": "https://github.com/Lmmmmmm-bb/vite-plugin-open-graph/issues",
-  "keywords": [],
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "open-graph",
+    "open-graph-protocol"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {

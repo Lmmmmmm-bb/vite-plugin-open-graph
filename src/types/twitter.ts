@@ -1,97 +1,91 @@
-export enum TwitterCardEnum {
-  Summary = 'summary',
-  SummaryLargeImage = 'summary_large_image',
-  App = 'app',
-  Player = 'player',
-}
-
 export interface TwitterOptions {
   /**
    * @description The card type
    */
-  card?: TwitterCardEnum
+  card?: 'summary' | 'summary_large_image' | 'app' | 'player'
   /**
-   * @description The card type
+   * @description username of website. Either twitter:site or twitter:site:id is required.
    */
   site?: string
   /**
-   * @description The card type
+   * @description Same as twitter:site, but the user’s Twitter ID. Either twitter:site or twitter:site:id is required.
    */
   siteId?: string
   /**
-   * @description The card type
+   * @description username of content creator
    */
   creator?: string
   /**
-   * @description The card type
+   * @description Twitter user ID of content creator
    */
   creatorId?: string
   /**
-   * @description The card type
+   * @description Description of content
    */
   description?: string
   /**
-   * @description The card type
+   * @description Title of content
    */
   title?: string
   /**
-   * @description The card type
+   * @description URL of image to use in the card. Images must be less than 5MB in size. JPG, PNG, WEBP and GIF formats are supported. Only the first frame of an animated GIF will be used. SVG is not supported.
    */
   image?: string
   /**
-   * @description The card type
+   * @description A text description of the image conveying the essential nature of an image to users who are visually impaired. Maximum 420 characters.
    */
   imageAlt?: string
   /**
-   * @description The card type
+   * @description HTTPS URL of player iframe
    */
   player?: string
   /**
-   * @description The card type
+   * @description Width of iframe in pixels
    */
   playerWidth?: number
   /**
-   * @description The card type
+   * @description Height of iframe in pixels
    */
   playerHeight?: number
   /**
-   * @description The card type
+   * @description URL to raw video or audio stream
    */
   playerStream?: string
   /**
-   * @description The card type
+   * @description Name of your iPhone app
    */
   appNameIphone?: string
   /**
-   * @description The card type
+   * @description Your app ID in the iTunes App Store
+   * @note NOT your bundle ID
    */
   appIdIphone?: string
   /**
-   * @description The card type
+   * @description Your app’s custom URL scheme (you must include ”://” after your scheme name)
    */
   appUrlIphone?: string
   /**
-   * @description The card type
+   * @description Name of your iPad optimized app
    */
   appNameIpad?: string
   /**
-   * @description The card type
+   * @description Your app ID in the iTunes App Store
    */
   appIdIpad?: string
   /**
-   * @description The card type
+   * @description Your app’s custom URL scheme
    */
   appUrlIpad?: string
   /**
-   * @description The card type
+   * @description Name of your Android app
    */
   appNameGoogleplay?: string
   /**
-   * @description The card type
+   * @description Your app ID in the Google Play Store
    */
   appIdGoogleplay?: string
   /**
-   * @description The card type
+   * @description Your app’s custom URL scheme
    */
   appUrlGoogleplay?: string
 }

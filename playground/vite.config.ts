@@ -12,6 +12,7 @@ export default defineConfig({
     },
     extra: {
       description: 'hello',
+      localeAlternate: ['1', '2', '3'],
     },
   })],
 })
