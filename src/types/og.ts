@@ -11,7 +11,7 @@ export interface BasicOptions {
   /**
    * @description An image URL which should represent your object within the graph.
    */
-  image: string
+  image: string | ImageOptions
   /**
    * @description The canonical URL of your object that will be used as its permanent ID in the graph, e.g., "https://www.imdb.com/title/tt0117500/".
    */
@@ -22,7 +22,7 @@ export interface ExtraOptions {
   /**
    * @description A URL to an audio file to accompany this object.
    */
-  audio?: string
+  audio?: string | AudioOptions
   /**
    * @description A one to two sentence description of your object.
    */
@@ -49,7 +49,7 @@ export interface ExtraOptions {
   /**
    * @description A URL to a video file that complements this object.
    */
-  video?: string
+  video?: string | VideoOptions
 }
 
 export interface ImageOptions {
