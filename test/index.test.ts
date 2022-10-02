@@ -9,7 +9,9 @@ describe('camelcase function', () => {
 
   it('camelcase name', () => {
     expect(camelcase('helloWorld')).toEqual('hello:world')
-    expect(camelcase('siteName')).toEqual('site:name')
+    // EXCEPTION_FIELD include siteName
+    expect(camelcase('secureUrl')).toEqual('secure_url')
+    expect(camelcase('siteName')).toEqual('site_name')
   })
 
   it('empty string', () => {
