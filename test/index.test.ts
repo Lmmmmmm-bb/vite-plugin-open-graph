@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { camelcase } from '../src/transform'
+import { camelcase } from '../src/utils'
 
 describe('camelcase function', () => {
   it('lowercase name', () => {
