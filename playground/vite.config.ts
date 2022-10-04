@@ -23,8 +23,29 @@ const ogOptions: Options = {
     video: 'video meta',
   },
   twitter: {
-    appNameGoogleplay: 'asd',
-    siteId: '123',
+    image: 'https://lmmmmmm.me/avatar.png',
+    imageAlt: 'twitter image alt',
+    player: 'player',
+    playerWidth: 1200,
+    playerHeight: 600,
+    playerStream: 'player stream',
+    app: {
+      name: {
+        iphone: 'iphone name',
+        ipad: 'ipad name',
+        googleplay: 'google play name',
+      },
+      id: {
+        iphone: 'iphone url',
+        ipad: 'ipad url',
+        googleplay: 'google play url',
+      },
+      url: {
+        iphone: 'iphone url',
+        ipad: 'ipad url',
+        googleplay: 'google play url',
+      },
+    },
   },
 }
 
