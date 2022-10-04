@@ -5,7 +5,6 @@ export interface BasicOptions {
   title: string
   /**
    * @description The type of your object, e.g., "video.movie". Depending on the type you specify, other properties may also be required.
-
    */
   type: string
   /**

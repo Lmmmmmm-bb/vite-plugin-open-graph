@@ -51,7 +51,6 @@
     "lint": "eslint .",
     "prepublishOnly": "unbuild",
     "release": "bumpp && npm publish",
-    "start": "esno src/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },

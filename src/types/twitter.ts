@@ -1,6 +1,7 @@
 export interface TwitterOptions {
   /**
    * @description The card type
+   * @backup `og:type`
    */
   card?: 'summary' | 'summary_large_image' | 'app' | 'player'
   /**
@@ -21,18 +22,22 @@ export interface TwitterOptions {
   creatorId?: string
   /**
    * @description Description of content
+   * @backup `og:description`
    */
   description?: string
   /**
    * @description Title of content
+   * @backup `og:title`
    */
   title?: string
   /**
    * @description URL of image to use in the card. Images must be less than 5MB in size. JPG, PNG, WEBP and GIF formats are supported. Only the first frame of an animated GIF will be used. SVG is not supported.
+   * @backup `og:image`
    */
   image?: string
   /**
    * @description A text description of the image conveying the essential nature of an image to users who are visually impaired. Maximum 420 characters.
+   * @backup `og:image:alt`
    */
   imageAlt?: string
   /**
