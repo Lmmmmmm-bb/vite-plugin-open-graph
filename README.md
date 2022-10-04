@@ -38,8 +38,6 @@ const ogOptions: Options = {
     title: '_lmmmmmm',
     type: 'image.png',
     image: 'https://lmmmmmm.me/avatar.png',
-  },
-  extra: {
     determiner: 'auto',
     description: '_lmmmmmm, Front-end Developer.',
     locale: 'zh_CN',
@@ -96,19 +94,15 @@ You can consult the `.d.ts` file to see more descriptions of the fields when dev
 ```ts
 // Base Plugin Config
 interface Options {
-  basic: BasicOptions
-  extra?: ExtraOptions
+  basic?: BasicOptions
   twitter?: TwitterOptions
 }
 
 interface BasicOptions {
-  title: string
-  type: string
-  image: string | ImageOptions
-  url: string
-}
-
-interface ExtraOptions {
+  title?: string
+  type?: string
+  image?: string | ImageOptions
+  url?: string
   description?: string
   determiner?: 'a' | 'an' | 'the' | 'auto' | ''
   locale?: string
