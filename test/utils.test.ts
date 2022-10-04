@@ -26,12 +26,10 @@ describe('camelcase function', () => {
 
 describe('toAttrs function', () => {
   it('snapshot', () => {
-    const basicOGMetaAttrs = Object.entries(ogOptions.basic).map(([name, content]) => toAttrs(camelcase(name), content, 'og'))
-    const extraOGMetaAttrs = Object.entries(ogOptions.extra ?? {}).map(([name, content]) => toAttrs(camelcase(name), content, 'og'))
+    const basicOGMetaAttrs = Object.entries(ogOptions.basic ?? {}).map(([name, content]) => toAttrs(camelcase(name), content, 'og'))
     const twitterOGMetaAttrs = Object.entries(ogOptions.twitter ?? {}).map(([name, content]) => toAttrs(camelcase(name), content, 'twitter'))
 
     expect(basicOGMetaAttrs).toMatchSnapshot()
-    expect(extraOGMetaAttrs).toMatchSnapshot()
     expect(twitterOGMetaAttrs).toMatchSnapshot()
   })
 })
