@@ -87,3 +87,82 @@ export default defineConfig({
 <p align="center">
 <img src="./screenshot.png" width="600" />
 </p>
+</details>
+
+## Types
+
+You can consult the `.d.ts` file to see more descriptions of the fields when develop.
+
+```ts
+// Base Plugin Config
+interface Options {
+  basic: BasicOptions
+  extra?: ExtraOptions
+  twitter?: TwitterOptions
+}
+
+interface BasicOptions {
+  title: string
+  type: string
+  image: string | ImageOptions
+  url: string
+}
+
+interface ExtraOptions {
+  description?: string
+  determiner?: 'a' | 'an' | 'the' | 'auto' | ''
+  locale?: string
+  localeAlternate?: string[]
+  siteName?: string
+  video?: string | VideoOptions
+}
+```
+
+```ts
+interface ImageOptions {
+  url?: string
+  secureUrl?: string
+  type?: string
+  width?: number
+  height?: number
+  alt?: string
+}
+
+type VideoOptions = Omit<ImageOptions, 'alt'>
+```
+
+```ts
+// Twitter Open Graph Options
+interface TwitterOptions {
+  card?: 'summary' | 'summary_large_image' | 'app' | 'player'
+  site?: string
+  siteId?: string
+  creator?: string
+  creatorId?: string
+  description?: string
+  title?: string
+  image?: string
+  imageAlt?: string
+  player?: string
+  playerWidth?: number
+  playerHeight?: number
+  playerStream?: string
+  app?: {
+    name?: {
+      iphone?: string
+      ipad?: string
+      googleplay?: string
+    }
+    id?: {
+      iphone?: string
+      ipad?: string
+      googleplay?: string
+    }
+    url?: {
+      iphone?: string
+      ipad?: string
+      googleplay?: string
+    }
+  }
+}
+```
