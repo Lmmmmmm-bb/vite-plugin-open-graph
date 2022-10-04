@@ -2,8 +2,6 @@ import type { Plugin } from 'vite'
 import { transform } from './transform'
 import type { BasicOptions, ExtraOptions, Options, TwitterOptions } from './types'
 
-export { Options, BasicOptions, ExtraOptions, TwitterOptions }
-
 export default (options: Options): Plugin => {
   return {
     name: 'vite-plugin-open-graph',
@@ -12,3 +10,5 @@ export default (options: Options): Plugin => {
     },
   }
 }
+
+export { Options, BasicOptions, ExtraOptions, TwitterOptions }
