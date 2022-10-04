@@ -8,8 +8,6 @@ const ogOptions: Options = {
     title: '_lmmmmmm',
     type: 'image.png',
     image: 'https://lmmmmmm.me/avatar.png',
-  },
-  extra: {
     determiner: 'auto',
     description: '_lmmmmmm, Front-end Developer.',
     locale: 'zh_CN',

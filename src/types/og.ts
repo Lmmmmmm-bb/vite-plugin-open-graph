@@ -2,22 +2,19 @@ export interface BasicOptions {
   /**
    * @description The title of your object as it should appear within the graph, e.g., "The Rock".
    */
-  title: string
+  title?: string
   /**
    * @description The type of your object, e.g., "video.movie". Depending on the type you specify, other properties may also be required.
    */
-  type: string
+  type?: string
   /**
    * @description An image URL which should represent your object within the graph.
    */
-  image: string | ImageOptions
+  image?: string | ImageOptions
   /**
    * @description The canonical URL of your object that will be used as its permanent ID in the graph, e.g., "https://www.imdb.com/title/tt0117500/".
    */
-  url: string
-}
-
-export interface ExtraOptions {
+  url?: string
   /**
    * @description A URL to an audio file to accompany this object.
    */

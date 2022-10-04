@@ -3,11 +3,10 @@ import type { Options } from './types'
 import { camelcase, toAttrs } from './utils'
 
 export const transform = (options: Options): HtmlTagDescriptor[] => {
-  const basicOGMetaAttrs = Object.entries(options.basic).map(([name, content]) => toAttrs(camelcase(name), content, 'og'))
-  const extraOGMetaAttrs = Object.entries(options.extra ?? {}).map(([name, content]) => toAttrs(camelcase(name), content, 'og'))
+  const basicOGMetaAttrs = Object.entries(options.basic ?? {}).map(([name, content]) => toAttrs(camelcase(name), content, 'og'))
   const twitterOGMetaAttrs = Object.entries(options.twitter ?? {}).map(([name, content]) => toAttrs(camelcase(name), content, 'twitter'))
 
-  const attrs = [...basicOGMetaAttrs.flat(), ...extraOGMetaAttrs.flat(), ...twitterOGMetaAttrs.flat(3)]
+  const attrs = [...basicOGMetaAttrs.flat(), ...twitterOGMetaAttrs.flat(3)]
 
   return attrs.map(_attrs => ({
     attrs: _attrs,

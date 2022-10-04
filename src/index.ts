@@ -1,6 +1,6 @@
 import type { Plugin } from 'vite'
 import { transform } from './transform'
-import type { BasicOptions, ExtraOptions, Options, TwitterOptions } from './types'
+import type { BasicOptions, Options, TwitterOptions } from './types'
 
 export default (options: Options): Plugin => {
   return {
@@ -11,4 +11,4 @@ export default (options: Options): Plugin => {
   }
 }
 
-export { Options, BasicOptions, ExtraOptions, TwitterOptions }
+export { Options, BasicOptions, TwitterOptions }
