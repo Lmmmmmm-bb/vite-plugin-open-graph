@@ -15,10 +15,10 @@ export const toAttrs = (name: string, content: number | string | string | Record
     return { name: _name, content: `${content}` }
 
   else if (Array.isArray(content))
-    return content.map(item => ({ name: _name, content: item }))
+    return content.map(_content => ({ name: _name, content: _content }))
 
   else if (typeof content === 'object')
-    return Object.entries(content).map(([_name, _content]) => toAttrs(camelcase(_name), _content, _name)) as HtmlTagDescriptor['attrs'][]
+    return Object.entries(content).map(([key, value]) => toAttrs(camelcase(key), value, _name)) as HtmlTagDescriptor['attrs'][]
 
   return { name: _name, content }
 }

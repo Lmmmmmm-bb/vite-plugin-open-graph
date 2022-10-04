@@ -7,7 +7,7 @@ export const transform = (options: Options): HtmlTagDescriptor[] => {
   const extraOGMetaAttrs = Object.entries(options.extra ?? {}).map(([name, content]) => toAttrs(camelcase(name), content, 'og'))
   const twitterOGMetaAttrs = Object.entries(options.twitter ?? {}).map(([name, content]) => toAttrs(camelcase(name), content, 'twitter'))
 
-  const attrs = [...basicOGMetaAttrs.flat(), ...extraOGMetaAttrs.flat(), ...twitterOGMetaAttrs.flat()]
+  const attrs = [...basicOGMetaAttrs.flat(), ...extraOGMetaAttrs.flat(), ...twitterOGMetaAttrs.flat(3)]
 
   return attrs.map(_attrs => ({
     attrs: _attrs,

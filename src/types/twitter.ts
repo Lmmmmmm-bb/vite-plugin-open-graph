@@ -56,41 +56,49 @@ export interface TwitterOptions {
    * @description URL to raw video or audio stream
    */
   playerStream?: string
-  /**
-   * @description Name of your iPhone app
-   */
-  appNameIphone?: string
-  /**
-   * @description Your app ID in the iTunes App Store
-   * @note NOT your bundle ID
-   */
-  appIdIphone?: string
-  /**
-   * @description Your app’s custom URL scheme (you must include ”://” after your scheme name)
-   */
-  appUrlIphone?: string
-  /**
-   * @description Name of your iPad optimized app
-   */
-  appNameIpad?: string
-  /**
-   * @description Your app ID in the iTunes App Store
-   */
-  appIdIpad?: string
-  /**
-   * @description Your app’s custom URL scheme
-   */
-  appUrlIpad?: string
-  /**
-   * @description Name of your Android app
-   */
-  appNameGoogleplay?: string
-  /**
-   * @description Your app ID in the Google Play Store
-   */
-  appIdGoogleplay?: string
-  /**
-   * @description Your app’s custom URL scheme
-   */
-  appUrlGoogleplay?: string
+  app?: {
+    name?: {
+      /**
+       * @description Name of your iPhone app
+       */
+      iphone?: string
+      /**
+       * @description Name of your iPad optimized app
+       */
+      ipad?: string
+      /**
+       * @description Name of your Android app
+       */
+      googleplay?: string
+    }
+    id?: {
+      /**
+       * @description Your app ID in the iTunes App Store
+       * @note NOT your bundle ID
+       */
+      iphone?: string
+      /**
+       * @description Your app ID in the iTunes App Store
+       */
+      ipad?: string
+      /**
+       * @description Your app ID in the Google Play Store
+       */
+      googleplay?: string
+    }
+    url?: {
+      /**
+       * @description Your app’s custom URL scheme (you must include ”://” after your scheme name)
+       */
+      iphone?: string
+      /**
+       * @description Your app’s custom URL scheme
+       */
+      ipad?: string
+      /**
+       * @description Your app’s custom URL scheme
+       */
+      googleplay?: string
+    }
+  }
 }
