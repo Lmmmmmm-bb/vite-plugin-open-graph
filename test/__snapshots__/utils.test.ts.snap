@@ -1,0 +1,144 @@
+// Vitest Snapshot v1
+
+exports[`toAttrs function > snapshot 1`] = `
+[
+  {
+    "content": "https://lmmmmmm.me",
+    "name": "og:url",
+  },
+  {
+    "content": "_lmmmmmm",
+    "name": "og:title",
+  },
+  {
+    "content": "image.png",
+    "name": "og:type",
+  },
+  {
+    "content": "https://lmmmmmm.me/avatar.png",
+    "name": "og:image",
+  },
+]
+`;
+
+exports[`toAttrs function > snapshot 2`] = `
+[
+  {
+    "content": "auto",
+    "name": "og:determiner",
+  },
+  {
+    "content": "_lmmmmmm, Front-end Developer.",
+    "name": "og:description",
+  },
+  {
+    "content": "zh_CN",
+    "name": "og:locale",
+  },
+  [
+    {
+      "content": "fr_FR",
+      "name": "og:locale:alternate",
+    },
+    {
+      "content": "es_ES",
+      "name": "og:locale:alternate",
+    },
+  ],
+  {
+    "content": "_lmmmmmm",
+    "name": "og:site_name",
+  },
+  [
+    {
+      "content": "audio url",
+      "name": "og:audio:url",
+    },
+    {
+      "content": "audio secure url",
+      "name": "og:audio:secure_url",
+    },
+    {
+      "content": "video.movie",
+      "name": "og:audio:type",
+    },
+  ],
+  {
+    "content": "video meta",
+    "name": "og:video",
+  },
+]
+`;
+
+exports[`toAttrs function > snapshot 3`] = `
+[
+  {
+    "content": "https://lmmmmmm.me/avatar.png",
+    "name": "twitter:image",
+  },
+  {
+    "content": "twitter image alt",
+    "name": "twitter:image:alt",
+  },
+  {
+    "content": "player",
+    "name": "twitter:player",
+  },
+  {
+    "content": "1200",
+    "name": "twitter:player:width",
+  },
+  {
+    "content": "600",
+    "name": "twitter:player:height",
+  },
+  {
+    "content": "player stream",
+    "name": "twitter:player:stream",
+  },
+  [
+    [
+      {
+        "content": "iphone name",
+        "name": "twitter:app:name:iphone",
+      },
+      {
+        "content": "ipad name",
+        "name": "twitter:app:name:ipad",
+      },
+      {
+        "content": "google play name",
+        "name": "twitter:app:name:googleplay",
+      },
+    ],
+    [
+      {
+        "content": "iphone url",
+        "name": "twitter:app:id:iphone",
+      },
+      {
+        "content": "ipad url",
+        "name": "twitter:app:id:ipad",
+      },
+      {
+        "content": "google play url",
+        "name": "twitter:app:id:googleplay",
+      },
+    ],
+    [
+      {
+        "content": "iphone url",
+        "name": "twitter:app:url:iphone",
+      },
+      {
+        "content": "ipad url",
+        "name": "twitter:app:url:ipad",
+      },
+      {
+        "content": "google play url",
+        "name": "twitter:app:url:googleplay",
+      },
+    ],
+  ],
+]
+`;
