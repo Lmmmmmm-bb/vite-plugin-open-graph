@@ -82,9 +82,38 @@ export default defineConfig({
 })
 ```
 
-<p align="center">
-<img src="./screenshot.png" width="600" />
-</p>
+```html
+<!-- this config will generated inside html head tag -->
+<meta name="og:url" content="https://lmmmmmm.me">
+<meta name="og:title" content="_lmmmmmm">
+<meta name="og:type" content="image.png">
+<meta name="og:image" content="https://lmmmmmm.me/avatar.png">
+<meta name="og:determiner" content="auto">
+<meta name="og:description" content="_lmmmmmm, Front-end Developer.">
+<meta name="og:locale" content="zh_CN">
+<meta name="og:locale:alternate" content="fr_FR">
+<meta name="og:locale:alternate" content="es_ES">
+<meta name="og:site_name" content="_lmmmmmm">
+<meta name="og:audio:url" content="audio url">
+<meta name="og:audio:secure_url" content="audio secure url">
+<meta name="og:audio:type" content="video.movie">
+<meta name="og:video" content="video meta">
+<meta name="twitter:image" content="https://lmmmmmm.me/avatar.png">
+<meta name="twitter:image:alt" content="twitter image alt">
+<meta name="twitter:player" content="player">
+<meta name="twitter:player:width" content="1200">
+<meta name="twitter:player:height" content="600">
+<meta name="twitter:player:stream" content="player stream">
+<meta name="twitter:app:name:iphone" content="iphone name">
+<meta name="twitter:app:name:ipad" content="ipad name">
+<meta name="twitter:app:name:googleplay" content="google play name">
+<meta name="twitter:app:id:iphone" content="iphone url">
+<meta name="twitter:app:id:ipad" content="ipad url">
+<meta name="twitter:app:id:googleplay" content="google play url">
+<meta name="twitter:app:url:iphone" content="iphone url">
+<meta name="twitter:app:url:ipad" content="ipad url">
+<meta name="twitter:app:url:googleplay" content="google play url">
+```
 </details>
 
 ## Types
