@@ -84,20 +84,20 @@ export default defineConfig({
 
 ```html
 <!-- this config will generated inside html head tag -->
-<meta name="og:url" content="https://lmmmmmm.me">
-<meta name="og:title" content="_lmmmmmm">
-<meta name="og:type" content="image.png">
-<meta name="og:image" content="https://lmmmmmm.me/avatar.png">
-<meta name="og:determiner" content="auto">
-<meta name="og:description" content="_lmmmmmm, Front-end Developer.">
-<meta name="og:locale" content="zh_CN">
-<meta name="og:locale:alternate" content="fr_FR">
-<meta name="og:locale:alternate" content="es_ES">
-<meta name="og:site_name" content="_lmmmmmm">
-<meta name="og:audio:url" content="audio url">
-<meta name="og:audio:secure_url" content="audio secure url">
-<meta name="og:audio:type" content="video.movie">
-<meta name="og:video" content="video meta">
+<meta property="og:url" content="https://lmmmmmm.me">
+<meta property="og:title" content="_lmmmmmm">
+<meta property="og:type" content="image.png">
+<meta property="og:image" content="https://lmmmmmm.me/avatar.png">
+<meta property="og:determiner" content="auto">
+<meta property="og:description" content="_lmmmmmm, Front-end Developer.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:site_name" content="_lmmmmmm">
+<meta property="og:audio:url" content="audio url">
+<meta property="og:audio:secure_url" content="audio secure url">
+<meta property="og:audio:type" content="video.movie">
+<meta property="og:video" content="video meta">
 <meta name="twitter:image" content="https://lmmmmmm.me/avatar.png">
 <meta name="twitter:image:alt" content="twitter image alt">
 <meta name="twitter:player" content="player">
