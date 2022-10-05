@@ -4,63 +4,63 @@ exports[`toAttrs function > snapshot 1`] = `
 [
   {
     "content": "https://lmmmmmm.me",
-    "name": "og:url",
+    "property": "og:url",
   },
   {
     "content": "_lmmmmmm",
-    "name": "og:title",
+    "property": "og:title",
   },
   {
     "content": "image.png",
-    "name": "og:type",
+    "property": "og:type",
   },
   {
     "content": "https://lmmmmmm.me/avatar.png",
-    "name": "og:image",
+    "property": "og:image",
   },
   {
     "content": "auto",
-    "name": "og:determiner",
+    "property": "og:determiner",
   },
   {
     "content": "_lmmmmmm, Front-end Developer.",
-    "name": "og:description",
+    "property": "og:description",
   },
   {
     "content": "zh_CN",
-    "name": "og:locale",
+    "property": "og:locale",
   },
   [
     {
       "content": "fr_FR",
-      "name": "og:locale:alternate",
+      "property": "og:locale:alternate",
     },
     {
       "content": "es_ES",
-      "name": "og:locale:alternate",
+      "property": "og:locale:alternate",
     },
   ],
   {
     "content": "_lmmmmmm",
-    "name": "og:site_name",
+    "property": "og:site_name",
   },
   [
     {
       "content": "audio url",
-      "name": "og:audio:url",
+      "property": "og:audio:url",
     },
     {
       "content": "audio secure url",
-      "name": "og:audio:secure_url",
+      "property": "og:audio:secure_url",
     },
     {
       "content": "video.movie",
-      "name": "og:audio:type",
+      "property": "og:audio:type",
     },
   ],
   {
     "content": "video meta",
-    "name": "og:video",
+    "property": "og:video",
   },
 ]
 `;
