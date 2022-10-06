@@ -17,6 +17,7 @@ describe('camelcase function', () => {
   it('exception field name', () => {
     expect(camelcase('secureUrl')).toEqual('secure_url')
     expect(camelcase('siteName')).toEqual('site_name')
+    expect(camelcase('appId')).toEqual('app_id')
   })
 
   it('empty string', () => {

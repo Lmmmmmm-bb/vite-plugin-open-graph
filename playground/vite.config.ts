@@ -45,6 +45,9 @@ const ogOptions: Options = {
       },
     },
   },
+  facebook: {
+    appId: 123456,
+  },
 }
 
 export default defineConfig({

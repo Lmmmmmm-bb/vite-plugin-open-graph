@@ -75,6 +75,9 @@ const ogOptions: Options = {
       },
     },
   },
+  facebook: {
+    appId: 123456,
+  },
 }
 
 export default defineConfig({
@@ -113,6 +116,7 @@ export default defineConfig({
 <meta name="twitter:app:url:iphone" content="iphone url">
 <meta name="twitter:app:url:ipad" content="ipad url">
 <meta name="twitter:app:url:googleplay" content="google play url">
+<meta name="fb:app_id" content="123456">
 ```
 </details>
 
@@ -125,6 +129,7 @@ You can consult the `.d.ts` file to see more descriptions of the fields when dev
 interface Options {
   basic?: BasicOptions
   twitter?: TwitterOptions
+  facebook?: FacebookOptions
 }
 
 interface BasicOptions {
@@ -190,10 +195,18 @@ interface TwitterOptions {
 }
 ```
 
+```ts
+export interface FacebookOptions {
+  appId: number
+}
+
+```
+
 ## Reference
 
 - [Open Graph protocol](https://ogp.me/)
 - [Open Graph of Twitter Card](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards)
+- [Open Graph of Facebook](https://developers.facebook.com/docs/sharing/webmasters/)
 
 ## License
 
