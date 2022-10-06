@@ -3,12 +3,17 @@
 [![GitHub license](https://img.shields.io/github/license/Lmmmmmm-bb/vite-plugin-open-graph)](https://github.com/Lmmmmmm-bb/vite-plugin-open-graph/blob/main/LICENSE)
 [![release](https://img.shields.io/github/v/release/Lmmmmmm-bb/vite-plugin-open-graph)](https://github.com/Lmmmmmm-bb/vite-plugin-open-graph/releases)
 
-Generate Open Graph meta tags for your Vite app, **support Twitter Card**.
+Generate Open Graph meta tags with simple configuration for your Vite app.
+
+## Features
+
+- Twitter Card and Facebook support.
+- First-class type support.
 
 ## Install
 
 ```bash
-npm i -D vite-plugin-open-graph
+npm i vite-plugin-open-graph -D
 ```
 
 ```ts
@@ -199,7 +204,6 @@ interface TwitterOptions {
 export interface FacebookOptions {
   appId: number
 }
-
 ```
 
 ## Reference
