@@ -1,4 +1,4 @@
-import type { Options } from '../src'
+import type { Options } from '../src';
 
 export const ogOptions: Options = {
   basic: {
@@ -43,4 +43,4 @@ export const ogOptions: Options = {
       },
     },
   },
-}
+};

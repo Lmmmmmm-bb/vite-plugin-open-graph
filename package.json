@@ -48,14 +48,14 @@
     "play": "vite playground",
     "build": "unbuild",
     "dev": "unbuild --stub",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "prepublishOnly": "unbuild",
     "release": "bumpp && npm publish",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.27.0",
+    "@lmmmmmm/eslint-config": "^0.1.0",
     "@types/node": "^18.7.18",
     "bumpp": "^8.2.1",
     "eslint": "^8.23.1",

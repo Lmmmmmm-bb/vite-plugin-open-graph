@@ -17,8 +17,8 @@ npm i vite-plugin-open-graph -D
 ```
 
 ```ts
-import { defineConfig } from 'vite'
-import ogPlugin from 'vite-plugin-open-graph'
+import { defineConfig } from 'vite';
+import ogPlugin from 'vite-plugin-open-graph';
 
 export default defineConfig({
   plugins: [
@@ -26,16 +26,16 @@ export default defineConfig({
       // your Open Graph information config
     })
   ],
-})
+});
 ```
 
 <details>
 <summary>Example</summary>
 
 ```ts
-import { defineConfig } from 'vite'
-import ogPlugin from 'vite-plugin-open-graph'
-import type { Options } from 'vite-plugin-open-graph'
+import { defineConfig } from 'vite';
+import ogPlugin from 'vite-plugin-open-graph';
+import type { Options } from 'vite-plugin-open-graph';
 
 const ogOptions: Options = {
   basic: {
@@ -83,11 +83,11 @@ const ogOptions: Options = {
   facebook: {
     appId: 123456,
   },
-}
+};
 
 export default defineConfig({
   plugins: [ogPlugin(ogOptions)],
-})
+});
 ```
 
 ```html
@@ -132,77 +132,77 @@ You can consult the `.d.ts` file to see more descriptions of the fields when dev
 ```ts
 // Base Plugin Config
 interface Options {
-  basic?: BasicOptions
-  twitter?: TwitterOptions
-  facebook?: FacebookOptions
+  basic?: BasicOptions;
+  twitter?: TwitterOptions;
+  facebook?: FacebookOptions;
 }
 
 interface BasicOptions {
-  title?: string
-  type?: string
-  image?: string | ImageOptions
-  url?: string
-  description?: string
-  determiner?: 'a' | 'an' | 'the' | 'auto' | ''
-  locale?: string
-  localeAlternate?: string[]
-  siteName?: string
-  video?: string | VideoOptions
+  title?: string;
+  type?: string;
+  image?: string | ImageOptions;
+  url?: string;
+  description?: string;
+  determiner?: 'a' | 'an' | 'the' | 'auto' | '';
+  locale?: string;
+  localeAlternate?: string[];
+  siteName?: string;
+  video?: string | VideoOptions;
 }
 ```
 
 ```ts
 interface ImageOptions {
-  url?: string
-  secureUrl?: string
-  type?: string
-  width?: number
-  height?: number
-  alt?: string
+  url?: string;
+  secureUrl?: string;
+  type?: string;
+  width?: number;
+  height?: number;
+  alt?: string;
 }
 
-type VideoOptions = Omit<ImageOptions, 'alt'>
+type VideoOptions = Omit<ImageOptions, 'alt'>;
 ```
 
 ```ts
 // Twitter Open Graph Options
 interface TwitterOptions {
-  card?: 'summary' | 'summary_large_image' | 'app' | 'player'
-  site?: string
-  siteId?: string
-  creator?: string
-  creatorId?: string
-  description?: string
-  title?: string
-  image?: string
-  imageAlt?: string
-  player?: string
-  playerWidth?: number
-  playerHeight?: number
-  playerStream?: string
+  card?: 'summary' | 'summary_large_image' | 'app' | 'player';
+  site?: string;
+  siteId?: string;
+  creator?: string;
+  creatorId?: string;
+  description?: string;
+  title?: string;
+  image?: string;
+  imageAlt?: string;
+  player?: string;
+  playerWidth?: number;
+  playerHeight?: number;
+  playerStream?: string;
   app?: {
     name?: {
-      iphone?: string
-      ipad?: string
-      googleplay?: string
-    }
+      iphone?: string;
+      ipad?: string;
+      googleplay?: string;
+    };
     id?: {
-      iphone?: string
-      ipad?: string
-      googleplay?: string
-    }
+      iphone?: string;
+      ipad?: string;
+      googleplay?: string;
+    };
     url?: {
-      iphone?: string
-      ipad?: string
-      googleplay?: string
-    }
-  }
+      iphone?: string;
+      ipad?: string;
+      googleplay?: string;
+    };
+  };
 }
 ```
 
 ```ts
 export interface FacebookOptions {
-  appId: number
+  appId: number;
 }
 ```
 
