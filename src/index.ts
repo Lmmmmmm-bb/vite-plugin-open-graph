@@ -5,7 +5,7 @@ import type { BasicOptions, FacebookOptions, Options, TwitterOptions } from './t
 export default (options?: Options): Plugin => ({
   name: 'vite-plugin-open-graph',
   transformIndexHtml(html) {
-    return { html, tags: transform(options ?? {}) };
+    return { html, tags: transform(options || {}) };
   },
 });
 
