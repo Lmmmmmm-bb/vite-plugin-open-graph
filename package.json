@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-open-graph",
   "type": "module",
-  "version": "2.0.2",
+  "version": "2.0.3-beta.0",
   "packageManager": "pnpm@8.6.2",
   "description": "Generate open graph meta tags for your vite app.",
   "author": {
@@ -34,7 +34,9 @@
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
-      "*": ["./dist/*"]
+      "*": [
+        "./dist/*"
+      ]
     }
   },
   "files": [
