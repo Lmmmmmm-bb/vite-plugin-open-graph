@@ -1,5 +1,6 @@
 import type { HtmlTagDescriptor } from 'vite';
-import { EXCEPTION_FIELD } from './constant';
+
+import { EXCEPTION_FIELD } from './constant.ts';
 
 /**
  * transform `siteName` to `site:name`

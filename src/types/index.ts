@@ -1,6 +1,6 @@
-import type { BasicOptions } from './og';
-import type { TwitterOptions } from './twitter';
-import type { FacebookOptions } from './facebook';
+import type { BasicOptions } from './og.ts';
+import type { TwitterOptions } from './twitter.ts';
+import type { FacebookOptions } from './facebook.ts';
 
 export { BasicOptions, TwitterOptions, FacebookOptions };
 

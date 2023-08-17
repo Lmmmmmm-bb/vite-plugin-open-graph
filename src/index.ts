@@ -1,6 +1,12 @@
 import type { Plugin } from 'vite';
-import { transform } from './transform';
-import type { BasicOptions, FacebookOptions, Options, TwitterOptions } from './types';
+
+import type {
+  BasicOptions,
+  FacebookOptions,
+  Options,
+  TwitterOptions,
+} from './types/index.ts';
+import { transform } from './transform.ts';
 
 export default (options?: Options): Plugin => ({
   name: 'vite-plugin-open-graph',
