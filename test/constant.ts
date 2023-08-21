@@ -1,4 +1,4 @@
-import type { Options } from '../src';
+import type { Options } from '../src/index.ts';
 
 export const ogOptions: Options = {
   basic: {

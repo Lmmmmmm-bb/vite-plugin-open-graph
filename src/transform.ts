@@ -1,6 +1,7 @@
 import type { HtmlTagDescriptor } from 'vite';
-import type { Options } from './types';
-import { camelcase, toAttrs } from './utils';
+
+import type { Options } from './types/index.ts';
+import { camelcase, toAttrs } from './utils.ts';
 
 export const transform = (options: Options): HtmlTagDescriptor[] => {
   const basicOGMetaAttrs = Object.entries(options.basic || {}).map(([name, content]) => toAttrs(camelcase(name), content, 'property', 'og'));
