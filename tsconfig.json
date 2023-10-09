@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
     "target": "es2018",
-    "module": "esnext",
     "lib": ["esnext"],
+    "module": "esnext",
     "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
-    "noEmit": true,
-    "esModuleInterop": true,
     "strict": true,
     "strictNullChecks": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true
+    "noEmit": true,
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
   },
   "types": ["vite/client"]
 }
