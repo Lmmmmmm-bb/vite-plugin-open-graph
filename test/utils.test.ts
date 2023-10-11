@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { ogOptions } from './constant.ts';
 import { camelcase, toAttrs } from '../src/utils.ts';
+import { ogOptions } from './constant.ts';
 
 describe('camelcase function', () => {
   it('lowercase name', () => {
