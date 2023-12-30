@@ -2,7 +2,7 @@
   "name": "vite-plugin-open-graph",
   "type": "module",
   "version": "2.0.3",
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@8.13.1",
   "description": "Generate open graph meta tags for your vite app.",
   "author": {
     "email": "lmmmmmm12138@gmail.com",
@@ -57,12 +57,12 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "1.0.0-beta.27",
-    "@types/node": "^20.8.7",
-    "bumpp": "^9.2.0",
-    "eslint": "^8.51.0",
-    "tsup": "^7.2.0",
-    "typescript": "^5.2.2",
-    "vite": "^4.5.0",
-    "vitest": "^0.34.6"
+    "@types/node": "^20.10.6",
+    "bumpp": "^9.2.1",
+    "eslint": "^8.56.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
+    "vitest": "^1.1.0"
   }
 }
