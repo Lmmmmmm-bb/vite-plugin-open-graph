@@ -9,7 +9,7 @@ import { EXCEPTION_FIELD } from './constant.ts';
  */
 export const camelcase = (attrName: string) => attrName.replace(/([A-Z])/g, EXCEPTION_FIELD.includes(attrName) ? '_$1' : ':$1').toLowerCase();
 
-export const toAttrs = (name: string, content: number | string | string | Record<string, string | number>, field: 'name' | 'property', prefix?: string): HtmlTagDescriptor['attrs'] | HtmlTagDescriptor['attrs'][] => {
+export const toAttrs = (name: string, content: number | string | Record<string, string | number>, field: 'name' | 'property', prefix?: string): HtmlTagDescriptor['attrs'] | HtmlTagDescriptor['attrs'][] => {
   const _name = prefix ? `${prefix}:${name}` : name;
 
   if (typeof content === 'number') {
