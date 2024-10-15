@@ -137,3 +137,76 @@ exports[`toAttrs function > snapshot 2`] = `
   ],
 ]
 `;
+
+exports[`toAttrs function > snapshot 3`] = `
+[
+  {
+    "content": "https://lmmmmmm.me/avatar.png",
+    "property": "twitter:image",
+  },
+  {
+    "content": "twitter image alt",
+    "property": "twitter:image:alt",
+  },
+  {
+    "content": "player",
+    "property": "twitter:player",
+  },
+  {
+    "content": "1200",
+    "property": "twitter:player:width",
+  },
+  {
+    "content": "600",
+    "property": "twitter:player:height",
+  },
+  {
+    "content": "player stream",
+    "property": "twitter:player:stream",
+  },
+  [
+    [
+      {
+        "content": "iphone name",
+        "property": "twitter:app:name:iphone",
+      },
+      {
+        "content": "ipad name",
+        "property": "twitter:app:name:ipad",
+      },
+      {
+        "content": "google play name",
+        "property": "twitter:app:name:googleplay",
+      },
+    ],
+    [
+      {
+        "content": "iphone url",
+        "property": "twitter:app:id:iphone",
+      },
+      {
+        "content": "ipad url",
+        "property": "twitter:app:id:ipad",
+      },
+      {
+        "content": "google play url",
+        "property": "twitter:app:id:googleplay",
+      },
+    ],
+    [
+      {
+        "content": "iphone url",
+        "property": "twitter:app:url:iphone",
+      },
+      {
+        "content": "ipad url",
+        "property": "twitter:app:url:ipad",
+      },
+      {
+        "content": "google play url",
+        "property": "twitter:app:url:googleplay",
+      },
+    ],
+  ],
+]
+`;
