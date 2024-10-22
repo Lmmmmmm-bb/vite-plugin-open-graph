@@ -30,8 +30,10 @@ describe('toAttrs function', () => {
   it('snapshot', () => {
     const basicOGMetaAttrs = Object.entries(ogOptions.basic || {}).map(([name, content]) => toAttrs(camelcase(name), content, 'property', 'og'));
     const twitterOGMetaAttrs = Object.entries(ogOptions.twitter || {}).map(([name, content]) => toAttrs(camelcase(name), content, 'name', 'twitter'));
+    const facebookOGMetaAttrs = Object.entries(ogOptions.twitter || {}).map(([name, content]) => toAttrs(camelcase(name), content, 'property', 'twitter'));
 
     expect(basicOGMetaAttrs).toMatchSnapshot();
     expect(twitterOGMetaAttrs).toMatchSnapshot();
+    expect(facebookOGMetaAttrs).toMatchSnapshot();
   });
 });

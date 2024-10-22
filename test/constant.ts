@@ -43,4 +43,7 @@ export const ogOptions: Options = {
       },
     },
   },
+  facebook: {
+    appId: 123456,
+  },
 };
