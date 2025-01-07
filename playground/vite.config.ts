@@ -1,6 +1,6 @@
+import type { Options } from 'vite-plugin-open-graph';
 import { defineConfig } from 'vite';
 import ogPlugin from 'vite-plugin-open-graph';
-import type { Options } from 'vite-plugin-open-graph';
 
 const ogOptions: Options = {
   basic: {
