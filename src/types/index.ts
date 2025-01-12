@@ -1,8 +1,8 @@
+import type { FacebookOptions } from './facebook.ts';
 import type { BasicOptions } from './og.ts';
 import type { TwitterOptions } from './twitter.ts';
-import type { FacebookOptions } from './facebook.ts';
 
-export { BasicOptions, TwitterOptions, FacebookOptions };
+export { BasicOptions, FacebookOptions, TwitterOptions };
 
 export interface Options {
   /**

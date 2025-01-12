@@ -15,4 +15,4 @@ export default (options?: Options): Plugin => ({
   },
 });
 
-export type { Options, BasicOptions, TwitterOptions, FacebookOptions };
+export type { BasicOptions, FacebookOptions, Options, TwitterOptions };
