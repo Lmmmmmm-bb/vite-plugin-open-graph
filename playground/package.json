@@ -8,8 +8,8 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "typescript": "^5.7.2",
-    "vite": "^6.0.7",
+    "typescript": "^5.8.3",
+    "vite": "^6.0.15",
     "vite-plugin-open-graph": "workspace:*"
   }
 }
