@@ -47,10 +47,10 @@
   },
   "scripts": {
     "play": "vite playground",
-    "build": "tsup",
-    "dev": "tsup --watch src",
+    "build": "tsdown",
+    "dev": "tsdown --watch src",
     "lint": "eslint . --fix",
-    "prepublishOnly": "tsup",
+    "prepublishOnly": "tsdown",
     "release": "bumpp && npm publish",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
@@ -60,7 +60,7 @@
     "@types/node": "^22.14.1",
     "bumpp": "^10.1.0",
     "eslint": "^9.24.0",
-    "tsup": "^8.4.0",
+    "tsdown": "^0.12.4",
     "typescript": "^5.8.3",
     "vite": "^6.0.15",
     "vitest": "^3.1.1"
