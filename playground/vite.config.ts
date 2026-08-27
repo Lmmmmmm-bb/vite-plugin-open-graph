@@ -6,19 +6,22 @@ const ogOptions: Options = {
   basic: {
     url: 'https://lmmmmmm.me',
     title: '_lmmmmmm',
-    type: 'image.png',
-    image: 'https://lmmmmmm.me/avatar.png',
+    type: 'website',
+    image: {
+      url: 'https://lmmmmmm.me/avatar.png',
+      alt: 'Portrait of _lmmmmmm',
+    },
     determiner: 'auto',
     description: '_lmmmmmm, Front-end Developer.',
     locale: 'zh_CN',
     localeAlternate: ['fr_FR', 'es_ES'],
     siteName: '_lmmmmmm',
     audio: {
-      url: 'audio url',
-      secureUrl: 'audio secure url',
-      type: 'video.movie',
+      url: 'https://lmmmmmm.me/audio.mp3',
+      secureUrl: 'https://lmmmmmm.me/audio-secure.mp3',
+      type: 'audio/mpeg',
     },
-    video: 'video meta',
+    video: 'https://lmmmmmm.me/video.mp4',
   },
   twitter: {
     image: 'https://lmmmmmm.me/avatar.png',

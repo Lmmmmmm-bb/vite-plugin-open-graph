@@ -9,6 +9,8 @@ Generate Open Graph meta tags with simple configuration for your Vite app.
 
 - Twitter Card and Facebook support.
 - First-class type support.
+- Ordered structured metadata and multiple images, audio files, or videos.
+- Non-blocking validation warnings for required Open Graph properties, URLs, and MIME types.
 
 ## Install
 
@@ -41,19 +43,22 @@ const ogOptions: Options = {
   basic: {
     url: 'https://lmmmmmm.me',
     title: '_lmmmmmm',
-    type: 'image.png',
-    image: 'https://lmmmmmm.me/avatar.png',
+    type: 'website',
+    image: {
+      url: 'https://lmmmmmm.me/avatar.png',
+      alt: 'Portrait of _lmmmmmm',
+    },
     determiner: 'auto',
     description: '_lmmmmmm, Front-end Developer.',
     locale: 'zh_CN',
     localeAlternate: ['fr_FR', 'es_ES'],
     siteName: '_lmmmmmm',
     audio: {
-      url: 'audio url',
-      secureUrl: 'audio secure url',
-      type: 'video.movie',
+      url: 'https://lmmmmmm.me/audio.mp3',
+      secureUrl: 'https://lmmmmmm.me/audio-secure.mp3',
+      type: 'audio/mpeg',
     },
-    video: 'video meta',
+    video: 'https://lmmmmmm.me/video.mp4',
   },
   twitter: {
     image: 'https://lmmmmmm.me/avatar.png',
@@ -91,21 +96,22 @@ export default defineConfig({
 ```
 
 ```html
-<!-- this config will generated inside html head tag -->
+<!-- this config will be generated inside the HTML head tag -->
 <meta property="og:url" content="https://lmmmmmm.me">
 <meta property="og:title" content="_lmmmmmm">
-<meta property="og:type" content="image.png">
+<meta property="og:type" content="website">
 <meta property="og:image" content="https://lmmmmmm.me/avatar.png">
+<meta property="og:image:alt" content="Portrait of _lmmmmmm">
 <meta property="og:determiner" content="auto">
 <meta property="og:description" content="_lmmmmmm, Front-end Developer.">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:site_name" content="_lmmmmmm">
-<meta property="og:audio:url" content="audio url">
-<meta property="og:audio:secure_url" content="audio secure url">
-<meta property="og:audio:type" content="video.movie">
-<meta property="og:video" content="video meta">
+<meta property="og:audio" content="https://lmmmmmm.me/audio.mp3">
+<meta property="og:audio:secure_url" content="https://lmmmmmm.me/audio-secure.mp3">
+<meta property="og:audio:type" content="audio/mpeg">
+<meta property="og:video" content="https://lmmmmmm.me/video.mp4">
 <meta name="twitter:image" content="https://lmmmmmm.me/avatar.png">
 <meta name="twitter:image:alt" content="twitter image alt">
 <meta name="twitter:player" content="player">
@@ -121,9 +127,57 @@ export default defineConfig({
 <meta name="twitter:app:url:iphone" content="iphone url">
 <meta name="twitter:app:url:ipad" content="ipad url">
 <meta name="twitter:app:url:googleplay" content="google play url">
-<meta name="fb:app_id" content="123456">
+<meta property="fb:app_id" content="123456">
 ```
 </details>
+
+## Multiple Media
+
+Images, audio files, and videos accept a string, a structured object, or an array containing either form. Structured properties are always emitted directly after their root media tag, regardless of object key order.
+
+```ts
+ogPlugin({
+  basic: {
+    title: 'My website',
+    type: 'website',
+    url: 'https://example.com',
+    image: [
+      {
+        width: 1200,
+        url: 'https://example.com/cover.jpg',
+        height: 630,
+        alt: 'Homepage cover',
+      },
+      {
+        url: 'https://example.com/secondary.jpg',
+        alt: 'Secondary cover',
+      },
+    ],
+  },
+});
+```
+
+The object form is recommended for images because it associates alt text and other structured properties with the correct image. A string image remains supported for compatibility, but produces a non-blocking warning because it cannot include `og:image:alt`.
+
+## Validation
+
+When `basic` metadata is provided, the plugin validates the four required Open Graph properties (`title`, `type`, `image`, and `url`) as well as configured HTTP(S) URLs and MIME types. Invalid metadata produces a warning without blocking the Vite build:
+
+```ts
+ogPlugin({
+  basic: {
+    title: 'My website',
+    type: 'website',
+    image: {
+      url: 'https://example.com/cover.jpg',
+      alt: 'My website cover',
+    },
+    url: 'https://example.com',
+  },
+});
+```
+
+Twitter-only and Facebook-only configurations do not require a `basic` section and do not produce missing-property warnings.
 
 ## Types
 
@@ -140,18 +194,25 @@ interface Options {
 interface BasicOptions {
   title?: string;
   type?: string;
-  image?: string | ImageOptions;
+  image?: OneOrMany<ImageInput>;
   url?: string;
+  audio?: OneOrMany<AudioInput>;
   description?: string;
   determiner?: 'a' | 'an' | 'the' | 'auto' | '';
   locale?: string;
   localeAlternate?: string[];
   siteName?: string;
-  video?: string | VideoOptions;
+  video?: OneOrMany<VideoInput>;
 }
 ```
 
 ```ts
+type OneOrMany<T> = T | readonly T[];
+
+type ImageInput = string | ImageOptions;
+type AudioInput = string | AudioOptions;
+type VideoInput = string | VideoOptions;
+
 interface ImageOptions {
   url?: string;
   secureUrl?: string;
@@ -162,6 +223,7 @@ interface ImageOptions {
 }
 
 type VideoOptions = Omit<ImageOptions, 'alt'>;
+type AudioOptions = Pick<ImageOptions, 'url' | 'secureUrl' | 'type'>;
 ```
 
 ```ts

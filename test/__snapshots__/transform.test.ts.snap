@@ -1,0 +1,254 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`transform function > matches the complete configuration snapshot 1`] = `
+[
+  {
+    "attrs": {
+      "content": "https://lmmmmmm.me",
+      "property": "og:url",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "_lmmmmmm",
+      "property": "og:title",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "website",
+      "property": "og:type",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "https://lmmmmmm.me/avatar.png",
+      "property": "og:image",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "Portrait of _lmmmmmm",
+      "property": "og:image:alt",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "auto",
+      "property": "og:determiner",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "_lmmmmmm, Front-end Developer.",
+      "property": "og:description",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "zh_CN",
+      "property": "og:locale",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "fr_FR",
+      "property": "og:locale:alternate",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "es_ES",
+      "property": "og:locale:alternate",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "_lmmmmmm",
+      "property": "og:site_name",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "https://lmmmmmm.me/audio.mp3",
+      "property": "og:audio",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "https://lmmmmmm.me/audio-secure.mp3",
+      "property": "og:audio:secure_url",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "audio/mpeg",
+      "property": "og:audio:type",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "https://lmmmmmm.me/video.mp4",
+      "property": "og:video",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "https://lmmmmmm.me/avatar.png",
+      "name": "twitter:image",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "twitter image alt",
+      "name": "twitter:image:alt",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "player",
+      "name": "twitter:player",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "1200",
+      "name": "twitter:player:width",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "600",
+      "name": "twitter:player:height",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "player stream",
+      "name": "twitter:player:stream",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "iphone name",
+      "name": "twitter:app:name:iphone",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "ipad name",
+      "name": "twitter:app:name:ipad",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "google play name",
+      "name": "twitter:app:name:googleplay",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "iphone url",
+      "name": "twitter:app:id:iphone",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "ipad url",
+      "name": "twitter:app:id:ipad",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "google play url",
+      "name": "twitter:app:id:googleplay",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "iphone url",
+      "name": "twitter:app:url:iphone",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "ipad url",
+      "name": "twitter:app:url:ipad",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "google play url",
+      "name": "twitter:app:url:googleplay",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+  {
+    "attrs": {
+      "content": "123456",
+      "property": "fb:app_id",
+    },
+    "injectTo": "head",
+    "tag": "meta",
+  },
+]
+`;

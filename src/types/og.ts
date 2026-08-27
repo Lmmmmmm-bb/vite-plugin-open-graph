@@ -8,17 +8,17 @@ export interface BasicOptions {
    */
   type?: string;
   /**
-   * @description An image URL which should represent your object within the graph.
+   * @description One or more image URLs or structured image objects which should represent your object within the graph.
    */
-  image?: string | ImageOptions;
+  image?: OneOrMany<ImageInput>;
   /**
    * @description The canonical URL of your object that will be used as its permanent ID in the graph, e.g., "https://www.imdb.com/title/tt0117500/".
    */
   url?: string;
   /**
-   * @description A URL to an audio file to accompany this object.
+   * @description One or more audio URLs or structured audio objects to accompany this object.
    */
-  audio?: string | AudioOptions;
+  audio?: OneOrMany<AudioInput>;
   /**
    * @description A one to two sentence description of your object.
    */
@@ -43,10 +43,18 @@ export interface BasicOptions {
    */
   siteName?: string;
   /**
-   * @description A URL to a video file that complements this object.
+   * @description One or more video URLs or structured video objects that complement this object.
    */
-  video?: string | VideoOptions;
+  video?: OneOrMany<VideoInput>;
 }
+
+export type OneOrMany<T> = T | readonly T[];
+
+export type ImageInput = string | ImageOptions;
+
+export type AudioInput = string | AudioOptions;
+
+export type VideoInput = string | VideoOptions;
 
 export interface ImageOptions {
   /**

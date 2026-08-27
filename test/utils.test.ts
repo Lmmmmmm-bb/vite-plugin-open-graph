@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
 import { camelcase, toAttrs } from '../src/utils.ts';
-import { ogOptions } from './constant.ts';
 
 describe('camelcase function', () => {
   it('lowercase name', () => {
@@ -27,13 +26,20 @@ describe('camelcase function', () => {
 });
 
 describe('toAttrs function', () => {
-  it('snapshot', () => {
-    const basicOGMetaAttrs = Object.entries(ogOptions.basic || {}).map(([name, content]) => toAttrs(camelcase(name), content, 'property', 'og'));
-    const twitterOGMetaAttrs = Object.entries(ogOptions.twitter || {}).map(([name, content]) => toAttrs(camelcase(name), content, 'name', 'twitter'));
-    const facebookOGMetaAttrs = Object.entries(ogOptions.twitter || {}).map(([name, content]) => toAttrs(camelcase(name), content, 'property', 'twitter'));
+  it('transforms nested and array values', () => {
+    expect(toAttrs('locale:alternate', ['fr_FR', 'es_ES'], 'property', 'og')).toEqual([
+      { property: 'og:locale:alternate', content: 'fr_FR' },
+      { property: 'og:locale:alternate', content: 'es_ES' },
+    ]);
+    expect(toAttrs('app', { name: { iphone: 'App name' } }, 'name', 'twitter')).toEqual([
+      { name: 'twitter:app:name:iphone', content: 'App name' },
+    ]);
+  });
 
-    expect(basicOGMetaAttrs).toMatchSnapshot();
-    expect(twitterOGMetaAttrs).toMatchSnapshot();
-    expect(facebookOGMetaAttrs).toMatchSnapshot();
+  it('skips nullish, non-finite, and unsupported values', () => {
+    expect(toAttrs('title', undefined, 'property', 'og')).toEqual([]);
+    expect(toAttrs('title', null, 'property', 'og')).toEqual([]);
+    expect(toAttrs('width', Number.NaN, 'property', 'og:image')).toEqual([]);
+    expect(toAttrs('enabled', true, 'property', 'og')).toEqual([]);
   });
 });

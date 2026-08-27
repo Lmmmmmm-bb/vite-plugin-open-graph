@@ -9,16 +9,26 @@ import { EXCEPTION_FIELD } from './constant.ts';
  */
 export const camelcase = (attrName: string) => attrName.replace(/([A-Z])/g, EXCEPTION_FIELD.includes(attrName) ? '_$1' : ':$1').toLowerCase();
 
-export const toAttrs = (name: string, content: number | string | Record<string, string | number>, field: 'name' | 'property', prefix?: string): HtmlTagDescriptor['attrs'] | HtmlTagDescriptor['attrs'][] => {
+type MetaAttrs = NonNullable<HtmlTagDescriptor['attrs']>;
+
+export const toAttrs = (name: string, content: unknown, field: 'name' | 'property', prefix?: string): MetaAttrs[] => {
   const _name = prefix ? `${prefix}:${name}` : name;
 
+  if (content === undefined || content === null) {
+    return [];
+  }
   if (typeof content === 'number') {
-    return { [field]: _name, content: `${content}` };
-  } else if (Array.isArray(content)) {
-    return content.map(_content => ({ [field]: _name, content: _content }));
-  } else if (typeof content === 'object') {
-    return Object.entries(content).map(([key, value]) => toAttrs(camelcase(key), value, field, _name)) as HtmlTagDescriptor['attrs'][];
+    return Number.isFinite(content) ? [{ [field]: _name, content: `${content}` }] : [];
+  }
+  if (typeof content === 'string') {
+    return [{ [field]: _name, content }];
+  }
+  if (Array.isArray(content)) {
+    return content.flatMap(_content => toAttrs(name, _content, field, prefix));
+  }
+  if (typeof content === 'object') {
+    return Object.entries(content).flatMap(([key, value]) => toAttrs(camelcase(key), value, field, _name));
   }
 
-  return { [field]: _name, content };
+  return [];
 };

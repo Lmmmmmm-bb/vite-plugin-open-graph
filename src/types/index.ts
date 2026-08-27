@@ -1,8 +1,28 @@
 import type { FacebookOptions } from './facebook.ts';
-import type { BasicOptions } from './og.ts';
+import type {
+  AudioInput,
+  AudioOptions,
+  BasicOptions,
+  ImageInput,
+  ImageOptions,
+  OneOrMany,
+  VideoInput,
+  VideoOptions,
+} from './og.ts';
 import type { TwitterOptions } from './twitter.ts';
 
-export { BasicOptions, FacebookOptions, TwitterOptions };
+export {
+  AudioInput,
+  AudioOptions,
+  BasicOptions,
+  FacebookOptions,
+  ImageInput,
+  ImageOptions,
+  OneOrMany,
+  TwitterOptions,
+  VideoInput,
+  VideoOptions,
+};
 
 export interface Options {
   /**
