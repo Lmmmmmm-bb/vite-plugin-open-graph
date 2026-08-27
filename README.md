@@ -8,6 +8,7 @@ Generate Open Graph meta tags with simple configuration for your Vite app.
 ## Features
 
 - Twitter Card and Facebook support.
+- Article, book, profile, music, and video object types.
 - First-class type support.
 - Ordered structured metadata and multiple images, audio files, or videos.
 - Non-blocking validation warnings for required Open Graph properties, URLs, and MIME types.
@@ -159,9 +160,67 @@ ogPlugin({
 
 The object form is recommended for images because it associates alt text and other structured properties with the correct image. A string image remains supported for compatibility, but produces a non-blocking warning because it cannot include `og:image:alt`.
 
+## Object Types
+
+Use the `object` section for namespaced Open Graph metadata. Its `type` field automatically generates `og:type` and narrows the available fields in TypeScript.
+
+```ts
+ogPlugin({
+  basic: {
+    title: 'Vite 8 Released',
+    url: 'https://example.com/posts/vite-8',
+    image: {
+      url: 'https://example.com/vite-8.jpg',
+      alt: 'Vite 8',
+    },
+  },
+  object: {
+    type: 'article',
+    publishedTime: '2026-08-27T10:00:00+08:00',
+    author: [
+      'https://example.com/authors/alice',
+    ],
+    section: 'Technology',
+    tag: ['Vite', 'Frontend'],
+  },
+});
+```
+
+Object references such as `article:author`, `video:director`, and `music:musician` are absolute HTTP(S) URLs. Properties that carry structured metadata accept an object form:
+
+```ts
+ogPlugin({
+  basic: {
+    title: 'Example episode',
+    url: 'https://example.com/episodes/1',
+    image: {
+      url: 'https://example.com/episodes/1.jpg',
+      alt: 'Example episode',
+    },
+  },
+  object: {
+    type: 'video.episode',
+    actor: [
+      {
+        url: 'https://example.com/actors/alice',
+        role: 'Lead',
+      },
+    ],
+    duration: 1800,
+    series: 'https://example.com/shows/example',
+  },
+});
+```
+
+This keeps `video:actor:role` directly after its associated `video:actor`. Music album and song references use the same object form with `url`, `disc`, and `track` fields.
+
+Supported object types are `website`, `profile`, `article`, `book`, `music.song`, `music.album`, `music.playlist`, `music.radio_station`, `video.movie`, `video.episode`, `video.tv_show`, and `video.other`.
+
+Existing `basic.type` configurations remain supported. When `object` is configured, `object.type` is used as the effective `og:type`; a conflicting `basic.type` produces a warning without blocking the build.
+
 ## Validation
 
-When `basic` metadata is provided, the plugin validates the four required Open Graph properties (`title`, `type`, `image`, and `url`) as well as configured HTTP(S) URLs and MIME types. Invalid metadata produces a warning without blocking the Vite build:
+When `basic` or `object` metadata is provided, the plugin validates the four required Open Graph properties (`title`, `type`, `image`, and `url`) as well as configured HTTP(S) URLs, MIME types, object references, dates, and positive integers. Invalid metadata produces a warning without blocking the Vite build:
 
 ```ts
 ogPlugin({
@@ -187,6 +246,7 @@ You can consult the `.d.ts` file to see more descriptions of the fields when dev
 // Base Plugin Config
 interface Options {
   basic?: BasicOptions;
+  object?: OpenGraphObjectOptions;
   twitter?: TwitterOptions;
   facebook?: FacebookOptions;
 }
@@ -204,6 +264,31 @@ interface BasicOptions {
   siteName?: string;
   video?: OneOrMany<VideoInput>;
 }
+```
+
+```ts
+type OpenGraphObjectOptions
+  = | WebsiteObjectOptions
+    | ProfileObjectOptions
+    | ArticleObjectOptions
+    | BookObjectOptions
+    | MusicObjectOptions
+    | VideoObjectOptions;
+
+interface ArticleObjectOptions {
+  type: 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  expirationTime?: string;
+  author?: OneOrMany<string>;
+  section?: string;
+  tag?: OneOrMany<string>;
+}
+
+type VideoActorInput = string | {
+  url: string;
+  role?: string;
+};
 ```
 
 ```ts

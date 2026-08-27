@@ -124,4 +124,27 @@ describe('vite plugin integration', () => {
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
     expect(warnings).toEqual([]);
   });
+
+  it('injects object metadata and infers og:type', async () => {
+    const { html, warnings } = await buildHtml({
+      basic: {
+        title: 'Article',
+        url: 'https://example.com/article',
+        image: {
+          url: 'https://example.com/article.jpg',
+          alt: 'Article cover',
+        },
+      },
+      object: {
+        type: 'article',
+        publishedTime: '2026-08-27T10:00:00+08:00',
+        author: 'https://example.com/authors/alice',
+      },
+    });
+
+    expect(html).toContain('<meta property="og:type" content="article">');
+    expect(html).toContain('<meta property="article:published_time" content="2026-08-27T10:00:00+08:00">');
+    expect(html).toContain('<meta property="article:author" content="https://example.com/authors/alice">');
+    expect(warnings).toEqual([]);
+  });
 });

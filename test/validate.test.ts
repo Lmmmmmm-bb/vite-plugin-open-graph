@@ -79,4 +79,75 @@ describe('validateOptions function', () => {
       '"og:image[1].alt" should be provided to describe the image.',
     ]);
   });
+
+  it('warns when basic.type conflicts with object.type', () => {
+    expect(validateOptions({
+      basic: {
+        title: 'Conflicting article',
+        type: 'website',
+        url: 'https://example.com/article',
+        image: {
+          url: 'https://example.com/article.jpg',
+          alt: 'Article cover',
+        },
+      },
+      object: {
+        type: 'article',
+      },
+    })).toEqual([
+      '"basic.type" (website) conflicts with "object.type" (article); "object.type" will be used.',
+    ]);
+  });
+
+  it('validates object references, date-times, and positive integers', () => {
+    expect(validateOptions({
+      basic: {
+        title: 'Invalid video',
+        url: 'https://example.com/video',
+        image: {
+          url: 'https://example.com/video.jpg',
+          alt: 'Video cover',
+        },
+      },
+      object: {
+        type: 'video.episode',
+        actor: '/actors/alice',
+        duration: 0,
+        releaseDate: 'August 27',
+        series: '',
+      },
+    })).toEqual([
+      '"video:actor[0]" must be an absolute HTTP(S) URL.',
+      '"video:duration" must be an integer greater than or equal to 1.',
+      '"video:release_date" must be a valid ISO 8601 date or date-time.',
+      '"video:series[0]" must provide a non-empty URL.',
+    ]);
+  });
+
+  it('validates structured music references', () => {
+    expect(validateOptions({
+      basic: {
+        title: 'Invalid song',
+        url: 'https://example.com/song',
+        image: {
+          url: 'https://example.com/song.jpg',
+          alt: 'Song cover',
+        },
+      },
+      object: {
+        type: 'music.song',
+        duration: 1.5,
+        album: {
+          url: 'ftp://example.com/album',
+          disc: 0,
+          track: 1.5,
+        },
+      },
+    })).toEqual([
+      '"music:duration" must be an integer greater than or equal to 1.',
+      '"music:album[0].url" must be an absolute HTTP(S) URL.',
+      '"music:album[0].disc" must be an integer greater than or equal to 1.',
+      '"music:album[0].track" must be an integer greater than or equal to 1.',
+    ]);
+  });
 });
