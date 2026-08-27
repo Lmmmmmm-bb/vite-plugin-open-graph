@@ -24,29 +24,12 @@ const ogOptions: Options = {
     video: 'https://lmmmmmm.me/video.mp4',
   },
   twitter: {
+    card: 'summary_large_image',
+    site: '@lmmmmmm',
+    title: '_lmmmmmm',
+    description: '_lmmmmmm, Front-end Developer.',
     image: 'https://lmmmmmm.me/avatar.png',
     imageAlt: 'twitter image alt',
-    player: 'player',
-    playerWidth: 1200,
-    playerHeight: 600,
-    playerStream: 'player stream',
-    app: {
-      name: {
-        iphone: 'iphone name',
-        ipad: 'ipad name',
-        googleplay: 'google play name',
-      },
-      id: {
-        iphone: 'iphone url',
-        ipad: 'ipad url',
-        googleplay: 'google play url',
-      },
-      url: {
-        iphone: 'iphone url',
-        ipad: 'ipad url',
-        googleplay: 'google play url',
-      },
-    },
   },
   facebook: {
     appId: 123456,
